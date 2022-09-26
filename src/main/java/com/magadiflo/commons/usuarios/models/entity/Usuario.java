@@ -38,6 +38,8 @@ public class Usuario implements Serializable {
 
 	@Column(unique = true, length = 100)
 	private String email;
+	
+	private Integer intentos;
 
 	@ManyToMany
 	@JoinTable(name = "usuarios_roles", 
@@ -100,6 +102,14 @@ public class Usuario implements Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Integer getIntentos() {
+		return intentos;
+	}
+
+	public void setIntentos(Integer intentos) {
+		this.intentos = intentos;
 	}
 
 	public List<Role> getRoles() {
